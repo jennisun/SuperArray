@@ -29,10 +29,22 @@ public class SuperArray {
 
   public String set(int index, String element) {
     String s = get(index);
-    data[index] = element;
-    return s;
+    if (s != null) {
+      data[index] = element;
+      return s;
+    }
+    else return "invalid entry";
   }
 
 
+  private void resize() {
+    String[] unicorns = new String[size + 5];
 
+    for (int i = 0; i < size; i ++) {
+      unicorns[i] = data[i];
+    }
+
+    data = unicorns;
+    size = data.length;
+  }
 }
