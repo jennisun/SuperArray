@@ -8,13 +8,23 @@ public class SuperArray {
   }
 
   public int size() {
-    int i = 0;
-    while (i < size && data[i] != null) i ++;
-
-    return i;
+    int count = 0;
+    for (int i = 0; i < size; i ++) {
+      if (data[i] != null) count ++;
+    }
+  return count;
   }
 
 
+  public boolean add(String element) {
+    data[size()] = element;
+    return true;
+  }
+
+
+  public String get(int index) {
+    return data[index];
+  }
 
 
 
