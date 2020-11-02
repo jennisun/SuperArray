@@ -11,7 +11,12 @@ public class Tester{
           System.out.println( a.get(i) );
     }
 
-    System.out.println( a.size() );
+    System.out.println( a.set(3, "cat") );
+
+    for(int i = 0; i < a.size(); i++){
+          System.out.println( a.get(i) );
+    }
+
 
 
 
