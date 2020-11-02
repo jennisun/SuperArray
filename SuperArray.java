@@ -17,7 +17,13 @@ public class SuperArray {
 
 
   public boolean add(String element) {
-    data[size()] = element;
+    if (size() != size) {
+      data[size()] = element;
+    }
+    else {
+      resize();
+      data[size()] = element;
+    }
     return true;
   }
 
