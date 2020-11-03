@@ -20,7 +20,10 @@ public class Tester {
         // }
 
         System.out.println(words.toString());
+        System.out.println(words.contains("uni"));
         words.clear();
         System.out.println(words.toString());
+        System.out.println(words.isEmpty());
+        System.out.println(words.contains("uni"));
     }
 }
