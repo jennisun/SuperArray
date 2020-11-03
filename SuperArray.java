@@ -3,9 +3,11 @@ public class SuperArray {
   private String [] data;
   private int size = 10; //The current size
 
+
   public SuperArray() {
     data = new String [10];
   }
+
 
   public int size() {
     int count = 0;
@@ -44,7 +46,7 @@ public class SuperArray {
 
 
   private void resize() {
-    String[] unicorns = new String[size + 5];
+    String[] unicorns = new String[size * 2];
 
     for (int i = 0; i < size; i ++) {
       unicorns[i] = data[i];
@@ -61,6 +63,7 @@ public class SuperArray {
 
 
   public void clear() {
+    data = new String[10];
     size = 0;
   }
 
@@ -82,7 +85,20 @@ public class SuperArray {
       if (data[i].equals(s)) return true;
     }
     return false;
+  }
 
+
+  public SuperArray(int initialCapacity) {
+    data = new String [initialCapacity];
+    size = initialCapacity;
+  }
+
+
+  public int indexOf(String s) {
+    for (int i = 0; i < size(); i ++) {
+      if (data[i].equals(s)) return i;
+    }
+    return -1;
   }
 
 

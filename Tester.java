@@ -1,13 +1,17 @@
 public class Tester {
     public static void main(String[] args) {
-        SuperArray words = new SuperArray();
+        SuperArray words = new SuperArray(20);
         words.add("kani");
         words.add("uni");
         words.add("ebi");
+
+        System.out.println(words.indexOf("u"));
+
+
         // for(int i = 0; i < words.size(); i++){
         //     System.out.println( words.get(i) );
         // }
-        //
+
         // for(int i = 0; i < 10; ++i) {
         //     words.add("mhm");
         // }
@@ -19,11 +23,12 @@ public class Tester {
         //     System.out.println( words.get(i) );
         // }
 
-        System.out.println(words.toString());
-        System.out.println(words.contains("uni"));
-        words.clear();
-        System.out.println(words.toString());
-        System.out.println(words.isEmpty());
-        System.out.println(words.contains("uni"));
+        // System.out.println(words.toString());
+        // System.out.println(words.contains("uni"));
+        // words.clear();
+        // System.out.println(words.toString());
+        // System.out.println(words.isEmpty());
+        // System.out.println(words.contains("uni"));
+
     }
 }
