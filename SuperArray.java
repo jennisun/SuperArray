@@ -53,4 +53,36 @@ public class SuperArray {
     data = unicorns;
     size = data.length;
   }
+
+
+  public boolean isEmpty() {
+    return (size() == 0);
+  }
+
+
+  public void clear() {
+    size = 0;
+  }
+
+
+  public String toString() {
+    String ans = "[";
+    if (size() != 0) {
+      for (int i = 0; i < size() - 1; i ++) {
+        ans += data[i] + ", ";
+      }
+      return ans + data[size() - 1] + "]";
+    }
+    return "[]";
+  }
+
+
+
+
+
+
+
+
+
+
 }
