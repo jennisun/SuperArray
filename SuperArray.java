@@ -102,9 +102,26 @@ public class SuperArray {
   }
 
 
+  public void add(int index, String element) {
+    if (index >= 0) {
+      if (index < size()){
+        String hold1 = data[index];
+        String hold2 = data[index + 1];
 
+        hold1 = data[index];
+        set(index, element);
 
+        if (size() == data.length) resize();
 
+        for (int i = index; i < size() + 1; i ++) {
+          hold2 = data[i + 1];
+          data[i + 1] = hold1;
+          hold1 = hold2;
+        }
+      }
+      else data[size()] = element;
+    }
+  }
 
 
 
