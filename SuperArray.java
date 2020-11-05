@@ -123,6 +123,20 @@ public class SuperArray {
     }
   }
 
+  public String remove(int index) {
+    if (index >= 0) {
+      String hold1 = data[index + 1];
+
+      for (int i = index; i < size() - 1; i ++) {
+        data[i] = hold1;
+        hold1 = data[i + 2];
+      }
+    }
+
+    data[size() - 1] = null;
+    return toString();
+  }
+
 
 
 
