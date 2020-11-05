@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Tester {
     public static void main(String[] args) {
         SuperArray words = new SuperArray(20);
@@ -5,7 +7,17 @@ public class Tester {
         words.add("uni");
         words.add("ebi");
 
-        System.out.println(words.indexOf("u"));
+        System.out.println(Arrays.toString(words.toArray()));
+        System.out.println(words.indexOf("hi"));
+
+        // words.remove(0);
+        // System.out.println(words.toString());
+        //
+        // words.remove(1);
+        // System.out.println(words.toString());
+
+        // words.remove(2);
+        // System.out.println(words.toString());
 
 
         // for(int i = 0; i < words.size(); i++){

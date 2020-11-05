@@ -94,14 +94,6 @@ public class SuperArray {
   }
 
 
-  public int indexOf(String s) {
-    for (int i = 0; i < size(); i ++) {
-      if (data[i].equals(s)) return i;
-    }
-    return -1;
-  }
-
-
   public void add(int index, String element) {
     if (index >= 0) {
       if (index < size()){
@@ -123,7 +115,10 @@ public class SuperArray {
     }
   }
 
+
   public String remove(int index) {
+    String element = data[index];
+
     if (index >= 0) {
       String hold1 = data[index + 1];
 
@@ -132,12 +127,27 @@ public class SuperArray {
         hold1 = data[i + 2];
       }
     }
-
     data[size() - 1] = null;
-    return toString();
+    return element;
   }
 
 
+  public int indexOf(String s) {
+    for (int i = 0; i < size(); i ++) {
+      if (data[i].equals(s)) return i;
+    }
+    return -1;
+  }
+
+
+   public String[] toArray() {
+     String[] arr = new String[size()];
+
+     for (int i = 0; i < size(); i ++) {
+       arr[i] = data[i];
+     }
+     return arr;
+   }
 
 
 
