@@ -81,11 +81,12 @@ public class SuperArray {
 
 
   public boolean contains(String s) {
-    for (int i = 0; i < size(); i ++) {
-      if (data[i].equals(s)) return true;
+      for (int i = 0; i < size(); i ++) {
+        if (data[i].equals(s)) return true;
+      }
+      return false;
     }
-    return false;
-  }
+
 
 
   public SuperArray(int initialCapacity) {
@@ -103,7 +104,7 @@ public class SuperArray {
         hold1 = data[index];
         set(index, element);
 
-        if (size() == data.length) resize();
+        if (size() + 1 >= data.length) resize();
 
         for (int i = index; i < size() + 1; i ++) {
           hold2 = data[i + 1];
@@ -120,11 +121,9 @@ public class SuperArray {
     String element = data[index];
 
     if (index >= 0) {
-      String hold1 = data[index + 1];
 
       for (int i = index; i < size() - 1; i ++) {
-        data[i] = hold1;
-        hold1 = data[i + 2];
+        data[i] = data[i + 1];
       }
     }
     data[size() - 1] = null;
