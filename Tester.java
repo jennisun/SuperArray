@@ -7,14 +7,14 @@ public class Tester {
         words.add("1");
         words.add("2");
         words.add("3");
+        words.add("4");
+        words.add("5");
 
         a.add("1");
         a.add("2");
-        a.add("3");
+        a.add("6");
 
-        System.out.println(words.equals(a));
-        System.out.println(words.toString());
-        System.out.println(a.toString());
+        System.out.println(Demo.zip(a, words).toString());
 
         // words.remove(0);
         // System.out.println(words.toString());

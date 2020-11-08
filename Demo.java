@@ -37,20 +37,41 @@ public class Demo{
 
   public static SuperArray findOverlap(SuperArray a, SuperArray b) {
     SuperArray arr = new SuperArray(20);
-
     removeDuplicates(a);
     removeDuplicates(b);
 
     for (int i = 0; i < a.size(); i ++) {
       if (b.contains(a.get(i))) arr.add(a.get(i));
     }
-
     removeDuplicates(arr);
     return arr;
   }
 
 
+  public static SuperArray zip(SuperArray a, SuperArray b){
+    SuperArray arr = new SuperArray(b.size() + a.size());
 
+    if (a.size() < b.size()) {
+    for (int i = 0; i < a.size(); i ++) {
+      arr.add(a.get(i));
+      arr.add(b.get(i));
+    }
+    for (int i = a.size(); i < b.size(); i ++) {
+      arr.add(b.get(i));
+      }
+    }
 
+    else {
+    for (int i = 0; i < b.size(); i ++) {
+      arr.add(a.get(i));
+      arr.add(b.get(i));
+    }
+    for (int i = b.size(); i < a.size(); i ++) {
+      arr.add(a.get(i));
+      }
+    }
+    
+    return arr;
+  }
 
 }
