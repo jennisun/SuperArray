@@ -148,4 +148,12 @@ public class SuperArray {
      return arr;
    }
 
+
+   public int lastIndexOf(String value){
+     for (int i = size(); i > 0; i --) {
+       if (data[i] != null && data[i].equals(value)) return i;
+     }
+     return -1;
+   }
+
 }
