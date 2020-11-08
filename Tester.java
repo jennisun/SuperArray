@@ -6,9 +6,14 @@ public class Tester {
         words.add("kani");
         words.add("uni");
         words.add("ebi");
+        words.add("ebi");
+        words.add("uni");
+        words.add("kani");
 
         System.out.println(Arrays.toString(words.toArray()));
-        System.out.println(words.indexOf("hi"));
+
+        Demo.removeDuplicates(words);
+        System.out.println(Arrays.toString(words.toArray()));
 
         // words.remove(0);
         // System.out.println(words.toString());
