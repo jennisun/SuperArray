@@ -3,17 +3,18 @@ import java.util.Arrays;
 public class Tester {
     public static void main(String[] args) {
         SuperArray words = new SuperArray(20);
-        words.add("kani");
-        words.add("uni");
-        words.add("ebi");
-        words.add("ebi");
-        words.add("uni");
-        words.add("kani");
+        SuperArray a = new SuperArray(20);
+        words.add("1");
+        words.add("2");
+        words.add("3");
 
-        System.out.println(Arrays.toString(words.toArray()));
+        a.add("1");
+        a.add("2");
+        a.add("3");
 
-        Demo.removeDuplicates(words);
-        System.out.println(Arrays.toString(words.toArray()));
+        System.out.println(words.equals(a));
+        System.out.println(words.toString());
+        System.out.println(a.toString());
 
         // words.remove(0);
         // System.out.println(words.toString());
