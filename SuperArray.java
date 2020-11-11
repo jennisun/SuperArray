@@ -31,11 +31,18 @@ public class SuperArray {
 
 
   public String get(int index) {
+    if (index < 0 || index >= size()) {
+       throw new IndexOutOfBoundsException ("index cannot be out of bounds");
+    }
     return data[index];
   }
 
 
   public String set(int index, String element) {
+    if (index < 0 || index >= size()) {
+       throw new IndexOutOfBoundsException ("index cannot be out of bounds");
+    }
+
     String s = get(index);
     if (s != null) {
       data[index] = element;
@@ -90,34 +97,40 @@ public class SuperArray {
 
 
   public SuperArray(int initialCapacity) {
-    data = new String [initialCapacity];
-    size = initialCapacity;
+    if (initialCapacity < 0) {
+       throw new IllegalArgumentException ("initial capacity cannot be negative");
+    }
+    else {
+      data = new String [initialCapacity];
+      size = initialCapacity;
+    }
   }
 
 
   public void add(int index, String element) {
-    if (index >= 0) {
-      if (index < size()){
-        String hold1 = data[index];
-        String hold2 = data[index + 1];
+    if (index < 0 || index >= size()) {
+       throw new IndexOutOfBoundsException ("index cannot be out of bounds");
+    }
+    String hold1 = data[index];
+    String hold2 = data[index + 1];
 
-        hold1 = data[index];
-        set(index, element);
+    hold1 = data[index];
+    set(index, element);
 
-        if (size() + 1 >= data.length) resize();
+    if (size() + 1 >= data.length) resize();
 
-        for (int i = index; i < size() + 1; i ++) {
-          hold2 = data[i + 1];
-          data[i + 1] = hold1;
-          hold1 = hold2;
-        }
-      }
-      else data[size()] = element;
+    for (int i = index; i < size() + 1; i ++) {
+      hold2 = data[i + 1];
+      data[i + 1] = hold1;
+      hold1 = hold2;
     }
   }
 
 
   public String remove(int index) {
+    if (index < 0 || index >= size()) {
+       throw new IndexOutOfBoundsException ("index cannot be out of bounds");
+    }
     String element = data[index];
 
     if (index >= 0) {
