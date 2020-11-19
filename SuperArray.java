@@ -43,7 +43,7 @@ public class SuperArray {
        throw new IndexOutOfBoundsException ("index cannot be out of bounds");
     }
 
-    String s = get(index);
+    String s = data[index];
     if (s != null) {
       data[index] = element;
       return s;
@@ -108,22 +108,17 @@ public class SuperArray {
 
 
   public void add(int index, String element) {
-    if (index < 0 || index >= size()) {
+    if (index < 0 || index > size()) {
        throw new IndexOutOfBoundsException ("index cannot be out of bounds");
     }
-    String hold1 = data[index];
-    String hold2 = data[index + 1];
 
-    hold1 = data[index];
-    set(index, element);
+    if (size() == data.length) resize();
 
-    if (size() + 1 >= data.length) resize();
-
-    for (int i = index; i < size() + 1; i ++) {
-      hold2 = data[i + 1];
-      data[i + 1] = hold1;
-      hold1 = hold2;
+    for (int i = size(); i > index; i --) {
+      data[i] = data[i - 1];
     }
+
+    data[index] = element;
   }
 
 
